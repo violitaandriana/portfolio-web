@@ -33,4 +33,4 @@ scrollReveal.reveal('.left-side', {delay: 200});
 scrollReveal.reveal('.right-side', {delay: 600});
 
 scrollReveal.reveal('.contact-section', {delay: 200});
-scrollReveal.reveal('.contact-card', {delay: 800});
+scrollReveal.reveal('.contact-card', {interval: 400});
