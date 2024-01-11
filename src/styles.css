@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
 
 * {
     margin: 0;
@@ -17,9 +16,16 @@
 :root {
     --bg-color-1: #eaddcf;
     --bg-color-2: #f9f4ef;
-    --bg-color-3: #8a6135;
-    --bg-color-4: #8c7851;
-    --bg-color-5: #9e774e;
+    --bg-color-4: #c084fc;
+    --bg-color-5: #a855f7;
+    --bg-light: #fffafa;
+    --dark: #373737;
+    --purple: #a70dbc;
+    --gradient-1: radial-gradient(circle, rgba(249, 244, 239, 1) 50%, rgba(246, 197, 255, 1) 100%);
+    --gradient-2: radial-gradient(circle, rgba(246, 197, 255, 1) 0%, rgba(249, 244, 239, 1) 50%, rgba(246, 197, 255, 1) 100%);
+    --gradient-3: radial-gradient(circle, rgba(249, 244, 239, 1) 0%, rgba(246, 197, 255, 1) 50%, rgba(249, 244, 239, 1) 100%);
+    --gradient-4: radial-gradient(circle, rgba(249, 244, 239, 1) 0%, rgba(251, 231, 254, 1) 61%, rgba(249, 244, 239, 1) 79%, rgba(249, 244, 239, 1) 88%);
+
 }
 
 html,
@@ -27,24 +33,31 @@ body {
     scroll-behavior: smooth;
 }
 
+.shared-bg-1 {
+    background: var(--gradient-2);
+}
+
+.shared-bg-2 {
+    background: var(--gradient-4);
+}
+
 .navbar {
+    z-index: 11;
     transition: 0.5s linear;
-    background-color: #fefefe !important;
     width: 100%;
-    box-shadow: 4px 2px 43px -14px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 4px 2px 43px -14px rgba(0, 0, 0, 0.1); */
 }
 
 .nav-menu-list {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    z-index: 10;
     width: 100%;
 }
 
-/* #navbar-menu {
+#navbar-menu {
     position: fixed;
-} */
+}
 
 .nav-link {
     font-size: 1rem;
@@ -55,6 +68,7 @@ body {
     padding-bottom: 2px;
     position: relative;
     text-decoration: none;
+    color: var(--dark);
 }
 
 .nav-link::before {
@@ -63,7 +77,7 @@ body {
     width: 100%;
     height: 3px;
     border-radius: 4px;
-    background-color: var(--bg-color-4);
+    background-color: var(--purple);
     bottom: 0;
     left: 0;
     transform-origin: right;
@@ -82,13 +96,14 @@ body {
 
 /* Openning Section */
 .open-section {
-    font-family: 'Playfair Display', sans-serif !important;
+    font-family: 'Manrope', sans-serif;
+    color: var(--dark);
+    line-height: 1.2em;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 120px 100px;
-    background-color: var(--bg-color-2);
-    height: 100vh;
+    padding: 140px 100px;
+    height: 100dvh;
 }
 
 .open-hello {
@@ -97,27 +112,27 @@ body {
 }
 
 .open-name {
-    font-size: 3.5rem;
+    font-size: 3.7rem;
+    padding-bottom: 10px;
 }
 
 .typed-text {
-    color: #a16207;
-    font-size: 2.6rem;
+    color: var(--purple);
+    font-size: 2.8rem;
 }
 
 /* About Section */
 .abt-section {
-    background-color: var(--bg-color-1);
-    padding-bottom: 60px;
+    margin-top: -40px;
 }
 
 .abt-desc {
     padding: 0px 200px 0px 100px;
 }
 
-.abt-desc h4 {
+.abt-desc h3 {
     font-size: 1.4rem;
-    color: var(--bg-color-3);
+    color: var(--purple);
 }
 
 .abt-text {
@@ -144,7 +159,7 @@ body {
     padding: 20px 100px;
     font-size: 1.4rem;
     font-family: 'Inter', sans-serif;
-    color: var(--bg-color-3);
+    color: var(--purple);
 }
 
 .abt-img {
@@ -156,11 +171,16 @@ body {
     height: 84px;
 }
 
+.abt-img:hover {
+    background-color: var(--bg-color-4);
+    color: white;
+}
+
 .abt-img span {
     display: block;
     font-size: 0.7rem;
     font-family: 'Inter';
-    padding-top: 6px;
+    padding-top: 10px;
 }
 
 .abt-img img {
@@ -172,12 +192,13 @@ body {
 /* Projects Section */
 .projects-section {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color-2);
+    margin-top: -20px;
 }
 
 .projects-title,
 .abt-title,
 .contact-title {
+    color: var(--dark);
     padding: 40px 0px 20px 100px;
     font-size: 2.5rem;
 }
@@ -203,7 +224,7 @@ body {
 
 .right-side {
     max-width: 600px;
-    background-color: #fefefe;
+    background-color: var(--bg-light);
     padding: 20px;
     border-radius: 10px;
     border: 3px solid black;
@@ -216,12 +237,12 @@ body {
 }
 
 .right-side .description {
-    color: var(--bg-color-3);
+    color: var(--dark);
     font-weight: 500;
 }
 
 .right-side .tech {
-    color: var(--bg-color-3);
+    color: var(--purple);
     font-weight: 600;
 }
 
@@ -245,7 +266,7 @@ body {
 .right-side a:hover,
 .view-more-btn:hover,
 .view-more-btn a:hover {
-    color: white;
+    color: var(--bg-light);
     background-color: var(--bg-color-5);
 }
 
@@ -279,7 +300,8 @@ footer {
     margin-bottom: 20px;
 }
 
-.contact-card i, .nav-hamburger-btn i {
+.contact-card i,
+.nav-hamburger-btn i {
     color: black;
     font-size: 36px;
     border: 2px solid black;
@@ -288,8 +310,9 @@ footer {
     margin-right: 8px;
 }
 
-.contact-card i:hover, .nav-hamburger-btn i:hover {
-    color: white;
+.contact-card i:hover,
+.nav-hamburger-btn i:hover {
+    color: var(--bg-light);
     background-color: var(--bg-color-5);
     cursor: pointer;
 }
@@ -299,7 +322,8 @@ footer {
     font-size: 1.1rem;
     padding-top: 20px;
     padding-bottom: 40px;
-    color: var(--bg-color-3);
+    color: var(--purple);
+    font-weight: 500;
 }
 
 /* Responsive */
@@ -376,6 +400,10 @@ footer {
         font-family: 'Inter';
         padding-top: 6px;
     }
+
+    .card-container {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -413,6 +441,11 @@ footer {
         padding-left: 60px;
     }
 
+    .abt-text,
+    .enter {
+        font-size: 0.8rem;
+    }
+
     .abt-img {
         text-align: center;
         width: 50px;
@@ -444,12 +477,12 @@ footer {
 
     .right-side p,
     .right-side a,
-    .right-side i {
-        font-size: 0.6rem;
+    .right-side span {
+        font-size: 0.8rem;
     }
 
     .view-more-btn {
-        margin-left: 40px;
+        margin-left: 60px;
     }
 
     .card-container {
@@ -466,27 +499,8 @@ footer {
     }
 
     .contact-card span,
-    footer {
+    footer,
+    footer span {
         font-size: 0.75rem;
     }
 }
-
-/* Animation */
-/* @keyframes imgAnimation {
-    50% {
-        transform: translateY(10px);
-    }
-} */
-/* animation: imgAnimation 7s ease-in-out infinite; */
-
-/* Note */
-/* object-fit: contain;  */
-/* The image keeps its aspect ratio, but is resized to fit within the given dimension */
-
-/* box-shadow: 14px 14px 0 -3px var(--bg-color-4), 14px 14px 0 0 black; */
-/* 14px adalah offset horizontal (sumbu X) dari bayangan. Dalam kasus ini, bayangan akan terletak 14 piksel dari elemen ke arah kanan.
-14px adalah offset vertikal (sumbu Y) dari bayangan. Dalam kasus ini, bayangan akan terletak 14 piksel dari elemen ke arah bawah.
-0 adalah blur radius, yang menentukan seberapa samar bayangan akan terlihat. Dalam kasus ini, blur radius diatur ke 0, sehingga bayangan akan terlihat tajam tanpa efek samar.
--3px adalah spread radius, yang mengontrol seberapa jauh bayangan akan diperluas atau diperkecil. Dalam kasus ini, bayangan akan diperkecil sebesar 3 piksel.
-var(--bg-color-4) adalah warna bayangan, dalam format kode warna hexadecimal. Dalam kasus ini, bayangan akan memiliki warna var(--bg-color-4).
-14px 14px 0 0 black: Nilai ini mengatur bayangan kedua pada elemen. Ini memiliki komponen yang sama dengan nilai sebelumnya, kecuali warna bayangan yang diatur sebagai hitam (black). */

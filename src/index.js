@@ -5,19 +5,14 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Typed from 'typed.js';
 import ScrollReveal from 'scrollreveal'
 import createNavbar from './navbar.js';
-import createOpening from './opening.js';
-import createAbout from './about.js';
-import createProjects from './projects.js';
-import createContact from './contact.js';
-import createFooter from './footer.js';
+import createTopSection from './topSection.js';
+import createBottomSection from './bottomSection.js';
 
+
+// Display Website
 createNavbar();
-createOpening();
-createAbout();
-createProjects();
-createContact();
-createFooter();
-
+createTopSection();
+createBottomSection();
 
 // Navbar Hamburger Menu
 const navHamburgerButton = document.querySelector(".nav-hamburger-btn");
@@ -32,7 +27,7 @@ function showNavbarMenu() {
 
 // Typing Animation
 var typingEffect = new Typed(".typed-text", {
-    strings: ["Undergraduate Student", "XXX"],
+    strings: ["Software Engineer", "Front End Developer"],
     loop: true,
     typeSpeed: 100,
     backSpeed: 80,
@@ -40,18 +35,42 @@ var typingEffect = new Typed(".typed-text", {
 })
 
 // Scroll Reveal Animation
-const scrollReveal = ScrollReveal({
+const srTop = ScrollReveal({
     origin: 'top',
     distance: '20px',
     duration: 2000,
     reset: true
-})
+});
 
-scrollReveal.reveal('.abt-section', {delay: 100});
+// All Title
+srTop.reveal('.abt-title', {delay: 100});
+srTop.reveal('.projects-title', {delay: 100});
+srTop.reveal('.contact-title', {delay: 300});
 
-scrollReveal.reveal('.projects-section', {delay: 200});
-scrollReveal.reveal('.left-side', {delay: 200});
-scrollReveal.reveal('.right-side', {delay: 600});
+const srLeft = ScrollReveal({
+    origin: 'left',
+    distance: '20px',
+    duration: 2000,
+    reset: true
+});
 
-scrollReveal.reveal('.contact-section', {delay: 200});
-scrollReveal.reveal('.contact-card', {interval: 400});
+// About
+srLeft.reveal('.abt-desc', {delay: 500});
+srLeft.reveal('.abt-skills', {delay: 1200});
+
+// Project (left)
+srLeft.reveal('.left-side', {delay: 500});
+srLeft.reveal('.view-more-btn', {delay: 200});
+
+// Contact 
+srLeft.reveal('.contact-card', {interval: 600});
+
+const srRight = ScrollReveal({
+    origin: 'right',
+    distance: '20px',
+    duration: 2000,
+    reset: true
+});
+
+// Project (right)
+srRight.reveal('.right-side', {delay: 500});

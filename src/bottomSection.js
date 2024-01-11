@@ -136,8 +136,83 @@ function createProjects() {
     projectsSection.appendChild(projectsContainer);
     projectsSection.appendChild(viewMore);
 
-    // Append Projects Section to Body
-    document.body.appendChild(projectsSection);
+    return projectsSection;
 }
 
-export default createProjects;
+function createContact() {
+    const contactSection = document.createElement('section');
+    contactSection.id = 'contact-section';
+    contactSection.classList.add('contact-section');
+
+    const contactTitle = document.createElement('h2');
+    contactTitle.classList.add('contact-title');
+    contactTitle.textContent = 'My Contact';
+
+    const cardContainer = document.createElement('div');
+    cardContainer.classList.add('card-container');
+
+    const cards = [
+        { href: 'mailto:violitaandriana2003@gmail.com', target: '_blank', i: 'bxs-envelope', text: 'violitaandriana2003@gmail.com' },
+        { href: 'https://github.com/violitaandriana', target: '_blank', i: 'bxl-github', text: '@violitaandriana' },
+        { href: 'https://id.linkedin.com/in/violita-andriana-widharma-917a22219', target: '_blank', i: 'bxl-linkedin', text: 'Violita Andriana Widharma' }
+    ];
+
+    cards.forEach(card => {
+        const contactCard = document.createElement('div');
+        contactCard.classList.add('contact-card');
+
+        const a = document.createElement('a');
+        a.href = card.href;
+        a.target = card.target;
+
+        const i = document.createElement('i');
+        i.classList.add('bx', card.i);
+
+        const span = document.createElement('span');
+        span.textContent = card.text;
+
+        a.appendChild(i);
+        contactCard.appendChild(a);
+        contactCard.appendChild(span);
+
+        cardContainer.appendChild(contactCard);
+    });
+    contactSection.appendChild(contactTitle);
+    contactSection.appendChild(cardContainer);
+
+    return contactSection;
+}
+
+function createFooter() {
+    const footer = document.createElement('footer');
+
+    const span = document.createElement('span');
+    span.className = 'year';
+    span.textContent = new Date().getFullYear();
+
+    const textNode = document.createTextNode(', Violita Andriana');
+
+    footer.appendChild(document.createTextNode('© Copyright '));
+    footer.appendChild(span);
+    footer.appendChild(textNode);
+
+    return footer;
+}
+
+function createBottomSection() {
+    const bottomSection = document.createElement('div');
+    bottomSection.classList.add('shared-bg-2');
+
+    const projectsSection = createProjects();
+    bottomSection.appendChild(projectsSection);
+
+    const contactSection = createContact();
+    bottomSection.appendChild(contactSection);
+
+    const footerSection = createFooter();
+    bottomSection.appendChild(footerSection);
+
+    document.body.appendChild(bottomSection);
+}
+
+export default createBottomSection;
