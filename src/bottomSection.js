@@ -201,7 +201,7 @@ function createFooter() {
 
 function createBottomSection() {
     const bottomSection = document.createElement('div');
-    bottomSection.classList.add('shared-bg-2');
+    bottomSection.classList.add('bottom-section');
 
     const projectsSection = createProjects();
     bottomSection.appendChild(projectsSection);

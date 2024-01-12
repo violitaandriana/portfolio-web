@@ -8,22 +8,42 @@ import createNavbar from './navbar.js';
 import createTopSection from './topSection.js';
 import createBottomSection from './bottomSection.js';
 
-
 // Display Website
 createNavbar();
 createTopSection();
 createBottomSection();
 
+
 // Navbar Hamburger Menu
+const navbarContainer = document.querySelector('.navbar');
 const navHamburgerButton = document.querySelector(".nav-hamburger-btn");
 const navbarMenu = document.querySelector(".nav-menu-list");
+const navLinks = document.querySelectorAll(".nav-link");
+const topSection = document.querySelector(".top-section");
+const bottomSection = document.querySelector(".bottom-section");
 
-navHamburgerButton.addEventListener("click", showNavbarMenu);
+navHamburgerButton.addEventListener("click", () => {
+    navbarMenu.classList.toggle('visible');
+    topSection.classList.toggle('bg-opacity');
+    bottomSection.classList.toggle('bg-opacity');
+})
 
-function showNavbarMenu() {
-    navHamburgerButton.style.display = "none";
-    navbarMenu.style.display = "flex";
+window.addEventListener('click', (e) => {
+    if (!navbarContainer.contains(e.target)) {
+        removeExtraClass();
+    }
+});
+
+navLinks.forEach(link => {
+    link.addEventListener('click', removeExtraClass)
+});
+
+function removeExtraClass() {
+    navbarMenu.classList.remove('visible');
+    topSection.classList.remove('bg-opacity');
+    bottomSection.classList.remove('bg-opacity');
 }
+
 
 // Typing Animation
 var typingEffect = new Typed(".typed-text", {

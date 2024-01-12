@@ -3,6 +3,15 @@ function createNavbar() {
     navbar.classList.add("navbar");
     navbar.id = "navbar-menu";
 
+    // Hamburger Menu
+    const div = document.createElement("div");
+    div.classList.add("nav-hamburger-btn");
+
+    const i = document.createElement("i");
+    i.classList.add("bx", "bx-menu");
+    div.appendChild(i);
+
+    // Nav List
     const ul = document.createElement("ul");
     ul.classList.add("nav-menu-list");
     ul.id = "nav-menu-list";
@@ -43,17 +52,8 @@ function createNavbar() {
     li3.appendChild(a3);
     ul.appendChild(li3);
 
-    navbar.appendChild(ul);
-
-    // Hamburger Menu
-    const div = document.createElement("div");
-    div.classList.add("nav-hamburger-btn");
-
-    const i = document.createElement("i");
-    i.classList.add("bx", "bx-menu");
-    div.appendChild(i);
-
     navbar.appendChild(div);
+    navbar.appendChild(ul);
 
     // Append Navbar to Body
     document.body.appendChild(navbar);

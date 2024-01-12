@@ -33,11 +33,11 @@ body {
     scroll-behavior: smooth;
 }
 
-.shared-bg-1 {
+.top-section {
     background: var(--gradient-2);
 }
 
-.shared-bg-2 {
+.bottom-section {
     background: var(--gradient-4);
 }
 
@@ -349,6 +349,24 @@ footer {
 @media screen and (max-width: 800px) {
     .nav-menu-list {
         display: none;
+        box-shadow: 4px 20px 43px -14px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .visible {
+        background-color: var(--bg-light);
+        z-index: 2;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 160px;
+        height: 140px;
+        text-align: center;
+    }
+
+    .bg-opacity {
+        opacity: 0.5;
     }
 
     /* hamburger menu */
@@ -407,6 +425,10 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+    .visible {
+        width: 140px;
+    }
+
     .open-section {
         padding: 60px;
     }

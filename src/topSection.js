@@ -105,7 +105,7 @@ function createAbout() {
 
 function createTopSection() {
     const topSection = document.createElement('section');
-    topSection.classList.add('shared-bg-1');
+    topSection.classList.add('top-section');
 
     const openSection = createOpening();
     topSection.appendChild(openSection);
