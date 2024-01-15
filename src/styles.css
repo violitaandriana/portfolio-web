@@ -45,14 +45,25 @@ body {
     z-index: 11;
     transition: 0.5s linear;
     width: 100%;
-    /* box-shadow: 4px 2px 43px -14px rgba(0, 0, 0, 0.1); */
+    display: flex;
 }
 
 .nav-menu-list {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    width: 100%;
+}
+
+.nav-contact i {
+    color: black;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.nav-contact i:hover {
+    border-radius: 50%;
+    background-color: var(--bg-light);
+    cursor: pointer;
 }
 
 #navbar-menu {
@@ -64,8 +75,7 @@ body {
     cursor: pointer;
     font-family: 'Inter', sans-serif;
     margin-right: 50px;
-    margin-top: 15px;
-    padding-bottom: 2px;
+    margin-top: 8px;
     position: relative;
     text-decoration: none;
     color: var(--dark);
@@ -102,7 +112,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 140px 100px;
+    padding: 150px 100px;
     height: 100dvh;
 }
 
@@ -275,6 +285,10 @@ body {
     padding-left: 4px;
 }
 
+.right-side i:hover {
+    transform: rotate(-45deg);
+}
+
 .view-more-btn {
     margin: 0px 0px 40px 100px;
 }
@@ -347,10 +361,14 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
-    .nav-menu-list {
+    .nav-lists {
         display: none;
         box-shadow: 4px 20px 43px -14px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
+    }
+
+    .nav-contact {
+        margin-top: -40px;
     }
 
     .visible {
@@ -360,8 +378,8 @@ footer {
         position: absolute;
         right: 0;
         top: 0;
-        width: 160px;
-        height: 140px;
+        width: 150px;
+        height: 110px;
         text-align: center;
     }
 
@@ -380,26 +398,38 @@ footer {
         border: none;
     }
 
+    .open-section {
+        height: auto;
+    }
+
     .open-hello {
-        font-size: 3.5rem;
+        font-size: 3.6rem;
     }
 
     .open-name {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
     }
 
     .typed-text {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
     }
 
     .projects-title,
     .abt-title,
     .contact-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .abt-desc h3, .abt-skills h3 {
+        font-size: 1.2rem;
     }
 
     .abt-desc {
         padding-right: 100px;
+    }
+
+    .abt-text, .enter {
+        font-size: 0.9rem;
     }
 
     .abt-img {
@@ -429,26 +459,31 @@ footer {
         width: 140px;
     }
 
+    .nav-contact i {
+        font-size: 20px;
+    }
+
     .open-section {
-        padding: 60px;
+        padding: 100px 60px;
+        height: auto;
     }
 
     .open-hello {
-        font-size: 2.5rem;
+        font-size: 2.9rem;
     }
 
     .open-name {
-        font-size: 1.5rem;
+        font-size: 1.9rem;
     }
 
     .typed-text {
-        font-size: 1rem;
+        font-size: 1.6rem;
     }
 
     .projects-title,
     .abt-title,
     .contact-title {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         padding-left: 60px;
     }
 
@@ -463,9 +498,13 @@ footer {
         padding-left: 60px;
     }
 
+    .abt-desc h3, .abt-skills h3 {
+        font-size: 1rem;
+    }
+
     .abt-text,
     .enter {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .abt-img {

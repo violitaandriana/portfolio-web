@@ -12,11 +12,42 @@ function createNavbar() {
     div.appendChild(i);
 
     // Nav List
-    const ul = document.createElement("ul");
-    ul.classList.add("nav-menu-list");
-    ul.id = "nav-menu-list";
+    // 1. Nav Contact
+    const ulContact = document.createElement('ul');
+    ulContact.className = 'nav-menu-list nav-contact';
+    
+    const liContact1 = document.createElement('li');
 
+    const aContact1 = document.createElement('a');
+    aContact1.href = 'https://github.com/violitaandriana';
+    aContact1.target = '_blank';
+    
+    const iContact1 = document.createElement('i');
+    iContact1.className = 'bx bxl-github';
+    
+    aContact1.appendChild(iContact1);
+    liContact1.appendChild(aContact1);
+    
+    const liContact2 = document.createElement('li');
+    
+    const aContact2 = document.createElement('a');
+    aContact2.href = 'https://id.linkedin.com/in/violita-andriana-widharma-917a22219';
+    aContact2.target = '_blank';
+    
+    const iContact2 = document.createElement('i');
+    iContact2.className = 'bx bxl-linkedin';
+    
+    aContact2.appendChild(iContact2);
+    liContact2.appendChild(aContact2);
+
+    ulContact.appendChild(liContact1);
+    ulContact.appendChild(liContact2);
+    
+    // 2. Nav Lists
     // About
+    const ulLists = document.createElement('ul');
+    ulLists.className = 'nav-menu-list nav-lists';
+
     const li1 = document.createElement("li");
     li1.classList.add("nav-list");
 
@@ -26,7 +57,7 @@ function createNavbar() {
     a1.textContent = "About";
 
     li1.appendChild(a1);
-    ul.appendChild(li1);
+    ulLists.appendChild(li1);
 
     // Projects
     const li2 = document.createElement("li");
@@ -38,7 +69,7 @@ function createNavbar() {
     a2.textContent = "Projects";
 
     li2.appendChild(a2);
-    ul.appendChild(li2);
+    ulLists.appendChild(li2);
 
     // Contact
     const li3 = document.createElement("li");
@@ -50,10 +81,11 @@ function createNavbar() {
     a3.textContent = "Contact";
 
     li3.appendChild(a3);
-    ul.appendChild(li3);
+    ulLists.appendChild(li3);
 
     navbar.appendChild(div);
-    navbar.appendChild(ul);
+    navbar.appendChild(ulContact);
+    navbar.appendChild(ulLists);
 
     // Append Navbar to Body
     document.body.appendChild(navbar);
