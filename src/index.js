@@ -4,15 +4,12 @@ import "../node_modules/boxicons/css/boxicons.min.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Typed from "typed.js";
 import ScrollReveal from "scrollreveal"
-import createNavbar from "./navbar.js";
 import createTopSection from "./topSection.js";
 import createBottomSection from "./bottomSection.js";
 
 // Display Website
-createNavbar();
 createTopSection();
 createBottomSection();
-
 
 // Navbar Hamburger Menu
 const navbarContainer = document.querySelector(".navbar");
@@ -24,8 +21,6 @@ const bottomSection = document.querySelector(".bottom-section");
 
 navHamburgerButton.addEventListener("click", () => {
     navbarMenu.classList.toggle("visible");
-    topSection.classList.toggle("bg-opacity");
-    bottomSection.classList.toggle("bg-opacity");
 })
 
 window.addEventListener("click", (e) => {
@@ -40,8 +35,6 @@ navLinks.forEach(link => {
 
 function removeExtraClass() {
     navbarMenu.classList.remove("visible");
-    topSection.classList.remove("bg-opacity");
-    bottomSection.classList.remove("bg-opacity");
 }
 
 
@@ -93,4 +86,4 @@ const srRight = ScrollReveal({
 });
 
 // Project (right)
-srRight.reveal(".right-side", {delay: 500});
+srRight.reveal(".right-side", {delay: 400});

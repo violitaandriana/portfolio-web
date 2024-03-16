@@ -200,6 +200,9 @@ function createFooter() {
 }
 
 function createBottomSection() {
+    const bottomContainer = document.createElement('div');
+    bottomContainer.classList.add('bottom-container');
+
     const bottomSection = document.createElement('div');
     bottomSection.classList.add('bottom-section');
 
@@ -212,7 +215,8 @@ function createBottomSection() {
     const footerSection = createFooter();
     bottomSection.appendChild(footerSection);
 
-    document.body.appendChild(bottomSection);
+    bottomContainer.appendChild(bottomSection);
+    document.body.appendChild(bottomContainer);
 }
 
 export default createBottomSection;

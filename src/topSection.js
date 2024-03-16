@@ -4,6 +4,7 @@ import js from '../assets/js.png';
 import webpack from '../assets/webpack.png';
 import git from '../assets/git.png';
 import figma from '../assets/figma.png';
+import createNavbar from './navbar.js';
 
 // Opening Section
 function createOpening() {
@@ -104,8 +105,14 @@ function createAbout() {
 }
 
 function createTopSection() {
+    const topContainer = document.createElement('div');
+    topContainer.classList.add('top-container');
+
     const topSection = document.createElement('section');
     topSection.classList.add('top-section');
+
+    const navbar = createNavbar();
+    topSection.appendChild(navbar);
 
     const openSection = createOpening();
     topSection.appendChild(openSection);
@@ -113,12 +120,13 @@ function createTopSection() {
     const aboutSection = createAbout();
     topSection.appendChild(aboutSection);
 
-    const waveSVG = document.createElement('waveSVG');
-    waveSVG.className = 'wave';
+    const waveSVG = document.createElement('div');
+    waveSVG.classList.add('full-width-svg');
 
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
     svg.setAttribute('viewBox', '0 0 1440 320');
+    svg.classList.add('full-width-svg'); 
 
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('fill', '#f9f4ef');
@@ -127,9 +135,10 @@ function createTopSection() {
 
     svg.appendChild(path);
     waveSVG.appendChild(svg);
-    topSection.appendChild(waveSVG);
-
-    document.body.appendChild(topSection);
+    
+    topContainer.appendChild(topSection)
+    topContainer.appendChild(waveSVG);
+    document.body.appendChild(topContainer);
 }
 
 export default createTopSection;

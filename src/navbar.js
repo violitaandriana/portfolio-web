@@ -15,34 +15,34 @@ function createNavbar() {
     // 1. Nav Contact
     const ulContact = document.createElement('ul');
     ulContact.className = 'nav-menu-list nav-contact';
-    
+
     const liContact1 = document.createElement('li');
 
     const aContact1 = document.createElement('a');
     aContact1.href = 'https://github.com/violitaandriana';
     aContact1.target = '_blank';
-    
+
     const iContact1 = document.createElement('i');
     iContact1.className = 'bx bxl-github';
-    
+
     aContact1.appendChild(iContact1);
     liContact1.appendChild(aContact1);
-    
+
     const liContact2 = document.createElement('li');
-    
+
     const aContact2 = document.createElement('a');
     aContact2.href = 'https://id.linkedin.com/in/violita-andriana-widharma-917a22219';
     aContact2.target = '_blank';
-    
+
     const iContact2 = document.createElement('i');
     iContact2.className = 'bx bxl-linkedin';
-    
+
     aContact2.appendChild(iContact2);
     liContact2.appendChild(aContact2);
 
     ulContact.appendChild(liContact1);
     ulContact.appendChild(liContact2);
-    
+
     // 2. Nav Lists
     // About
     const ulLists = document.createElement('ul');
@@ -87,8 +87,7 @@ function createNavbar() {
     navbar.appendChild(ulContact);
     navbar.appendChild(ulLists);
 
-    // Append Navbar to Body
-    document.body.appendChild(navbar);
+    return navbar;
 }
 
 export default createNavbar;
