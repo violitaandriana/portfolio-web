@@ -1,6 +1,7 @@
 import html5 from '../assets/html5.png';
 import css from '../assets/css.png';
 import js from '../assets/js.png';
+import react from '../assets/react.png';
 import webpack from '../assets/webpack.png';
 import git from '../assets/git.png';
 import figma from '../assets/figma.png';
@@ -57,7 +58,7 @@ function createAbout() {
 
     const descriptionParagraph = document.createElement('p');
     descriptionParagraph.classList.add('abt-text');
-    descriptionParagraph.innerHTML = 'I am currently a college student with a strong interest in website development. I am passionate about creating visually appealing and user-friendly websites using various programming languages and technologies. Through my coursework and personal projects, I have gained a solid foundation in HTML, CSS, JavaScript, and other web development frameworks. <span class="enter"> I am excited about the opportunity to contribute my skills and knowledge to create engaging online experiences.';
+    descriptionParagraph.innerHTML = 'I am currently a college student with a strong interest in website development. I am passionate about creating visually appealing and user-friendly websites using various programming languages and technologies. Through my coursework and personal projects, I have gained a solid foundation in HTML, CSS, JavaScript, and ReactJS. <span class="enter"> I am excited about the opportunity to contribute my skills and knowledge to create engaging online experiences.';
 
     aboutDescription.appendChild(descriptionHeading);
     aboutDescription.appendChild(descriptionParagraph);
@@ -75,6 +76,7 @@ function createAbout() {
         { src: html5, text: 'HTML' },
         { src: css, text: 'CSS' },
         { src: js, text: 'JAVASCRIPT' },
+        { src: react, text: 'REACT' },
         { src: webpack, text: 'WEBPACK' },
         { src: git, text: 'GIT' },
         { src: figma, text: 'FIGMA' }
