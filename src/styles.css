@@ -506,19 +506,6 @@ footer {
 
   .open-section {
     padding: 100px 60px;
-    height: auto;
-  }
-
-  .open-hello {
-    font-size: 2.9rem;
-  }
-
-  .open-name {
-    font-size: 1.9rem;
-  }
-
-  .typed-text {
-    font-size: 1.6rem;
   }
 
   .projects-title,
@@ -565,10 +552,6 @@ footer {
     font-size: 0.4rem;
   }
 
-  .projects-container {
-    margin-left: -20px;
-  }
-
   .left-side img {
     width: 500px;
     margin-top: -30px;
@@ -585,7 +568,7 @@ footer {
   }
 
   .view-more-btn {
-    margin-left: 60px;
+    margin-left: 84px;
   }
 
   .card-container {
@@ -594,7 +577,7 @@ footer {
   }
 
   .contact-card {
-    width: 260px;
+    width: 280px;
   }
 
   .contact-card i {
@@ -604,6 +587,6 @@ footer {
   .contact-card span,
   footer,
   footer span {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 }
