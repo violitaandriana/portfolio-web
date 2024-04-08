@@ -247,8 +247,7 @@ body {
 }
 
 .projects-container {
-  margin-left: -18px;
-  margin-right: 80px;
+  margin: 0px 80px 20px -18px;
 }
 
 .project {
@@ -256,7 +255,7 @@ body {
   grid-template-columns: 1fr 3fr;
   align-items: center;
   justify-content: center;
-  padding: 40px 0px;
+  padding-top: 40px;
 }
 
 .left-side img {
@@ -381,7 +380,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     flex-wrap: wrap;
   }
 
@@ -389,8 +387,13 @@ footer {
     margin: 0px;
   }
 
+  .view-more-btn {
+    margin-top: 60px;
+  }
+
   .right-side {
     width: 70%;
+    margin-bottom: 30px;
   }
 
   .nav-lists {
@@ -492,8 +495,12 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+  .open-name {
+    font-size: 2rem;
+  }
+
   .nav-hamburger-btn i {
-    margin-left: 0.5em;
+    margin-left: 0px;
   }
   
   .visible {
@@ -553,12 +560,16 @@ footer {
   }
 
   .left-side img {
-    width: 500px;
+    width: 400px;
     margin-top: -30px;
   }
 
+  .right-side {
+    margin-bottom: 60px;
+  }
+
   .right-side h3 {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .right-side p,
@@ -568,7 +579,7 @@ footer {
   }
 
   .view-more-btn {
-    margin-left: 84px;
+    margin: 0px 60px;
   }
 
   .card-container {
